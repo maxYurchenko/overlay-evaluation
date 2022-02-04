@@ -22,36 +22,38 @@ const rows = 50;
 const Table = () => {
   const classes = useStyles();
   return (
-    <TableContainer component={Paper} className={classes.wrapper}>
+    <Paper className={classes.wrapper}>
       <Typography>Revenue Details</Typography>
-      <MaterialTable className={classes.table}>
-        <TableHead className={classes.tableHead}>
-          <TableRow>
-            <TableCell>Invoice #</TableCell>
-            <TableCell>Customer</TableCell>
-            <TableCell>Invoice Date</TableCell>
-            <TableCell>Revenue</TableCell>
-            <TableCell>Cost of Goods</TableCell>
-            <TableCell>Gross Margin</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {[...Array(rows)].map((row, index) => (
-            <TableRow
-              key={index}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell>{data.invoiceId}</TableCell>
-              <TableCell>{data.customer}</TableCell>
-              <TableCell>{data.invoiceDate}</TableCell>
-              <TableCell>{data.revenue}</TableCell>
-              <TableCell>{data.costOfGoods}</TableCell>
-              <TableCell>{data.revenue - data.costOfGoods}</TableCell>
+      <TableContainer sx={{ maxHeight: 440 }}>
+        <MaterialTable className={classes.table} stickyHeader>
+          <TableHead className={classes.tableHead}>
+            <TableRow>
+              <TableCell>Invoice #</TableCell>
+              <TableCell>Customer</TableCell>
+              <TableCell>Invoice Date</TableCell>
+              <TableCell>Revenue</TableCell>
+              <TableCell>Cost of Goods</TableCell>
+              <TableCell>Gross Margin</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </MaterialTable>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {[...Array(rows)].map((row, index) => (
+              <TableRow
+                key={index}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell>{data.invoiceId}</TableCell>
+                <TableCell>{data.customer}</TableCell>
+                <TableCell>{data.invoiceDate}</TableCell>
+                <TableCell>{data.revenue}</TableCell>
+                <TableCell>{data.costOfGoods}</TableCell>
+                <TableCell>{data.revenue - data.costOfGoods}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </MaterialTable>
+      </TableContainer>
+    </Paper>
   );
 };
 

@@ -4,12 +4,15 @@ import theme from "../../../styles/variables";
 const useStyles = createUseStyles({
   wrapper: {
     display: "flex",
-    flexDirection: "column",
     padding: "20px",
-    color: theme.colors.asphalt
+    color: theme.colors.asphalt,
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    alignItems: "flex-end"
   },
   cardTitle: {
-    fontSize: theme.fontSize.l
+    fontSize: theme.fontSize.l,
+    flex: "1 1 100%"
   },
   cardHighlight: {
     fontWeight: 500,

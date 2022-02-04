@@ -5,8 +5,8 @@ const useStyles = createUseStyles({
   wrapper: {
     marginLeft: 280,
     width: `calc(100% - ${280}px)!important`,
-    padding: "35px 35px 0 0",
-    backgroundColor: theme.colors.background,
+    padding: "35px 35px 35px 0",
+    backgroundColor: theme.colors.transparent,
     boxShadow: "none"
   },
   list: {

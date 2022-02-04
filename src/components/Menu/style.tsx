@@ -27,6 +27,11 @@ const useStyles = createUseStyles({
     padding: "10px 0 10px 40px",
     margin: "10px 0 10px 0"
   },
+  active: {
+    background: theme.colors.darkGreen,
+    borderLeft: `8px solid ${theme.colors.white}`,
+    paddingLeft: "32px"
+  },
   icon: { ...base, minWidth: "24px", marginRight: "20px" }
 });
 
