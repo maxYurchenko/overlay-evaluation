@@ -9,6 +9,8 @@ import useStyles from "./style";
 import QuickStat from "./QuickStat/QuickStat";
 import ReactVirtualizedTable from "./Table/Table";
 import Chart from "./Chart/Chart";
+import { grossMarginLineQuery, revenueBarQuery } from "../../helpers/queries";
+import ChartWrapper from "./Chart/ChartWrapper";
 
 const Dashboard = () => {
   const classes = useStyles();
@@ -54,9 +56,19 @@ const Dashboard = () => {
           </Grid>
           <Grid item container direction="column" xs={12} sm={6} spacing={3}>
             <Grid item>
-              <Chart />
+              <ChartWrapper
+                columnQuery={revenueBarQuery}
+                lineQuery={grossMarginLineQuery}
+                id="chart1"
+              />
             </Grid>
-            <Grid item>Chart 2</Grid>
+            <Grid item>
+              <ChartWrapper
+                columnQuery={revenueBarQuery}
+                lineQuery={grossMarginLineQuery}
+                id="chart2"
+              />
+            </Grid>
           </Grid>
           <Grid item xs={12} md={6} lg={6}>
             <ReactVirtualizedTable />

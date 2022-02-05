@@ -1,6 +1,12 @@
-import cubejs, { Query } from "@cubejs-client/core";
+import cubejs, { Query, ResultSet, Series } from "@cubejs-client/core";
+import { SeriesConfig } from "../types/seriesConfig";
 
-export async function getDataFromCube(query: () => Query) {
+interface cubeData {
+  x: Date;
+  value: number;
+}
+
+export async function getDataFromCube(query: () => Query): Promise<any> {
   const baseUrl = process.env.REACT_APP_API_BASE_URL
     ? process.env.REACT_APP_API_BASE_URL
     : "";
@@ -13,12 +19,13 @@ export async function getDataFromCube(query: () => Query) {
   });
   const resultSet = await cubejsApi.load(query());
 
-  return resultSet.series().map((item, i) => {
-    return {
-      label: item.title,
-      data: item.series.map((item) => {
-        return { value: item.value, date: new Date(item.x) };
-      })
-    };
+  let result: SeriesConfig = { label: "", data: [] };
+
+  resultSet.series().forEach((item: Series<cubeData>) => {
+    result.label = result.label ? result.label : item.title;
+    item.series.forEach((item) => {
+      result.data.push({ value: item.value, date: new Date(item.x) });
+    });
   });
+  return result;
 }

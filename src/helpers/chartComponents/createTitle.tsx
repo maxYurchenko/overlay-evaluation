@@ -1,7 +1,7 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 
-import theme from "../../../../styles/variables";
+import theme from "../../styles/variables";
 
 interface Config {
   fontSize?: number;

@@ -1,7 +1,7 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 
-import theme from "../../../../styles/variables";
+import theme from "../../styles/variables";
 
 interface Config {
   valueX: string;
@@ -18,6 +18,7 @@ interface Config {
   specificXAxis?: am4charts.DateAxis;
   specificYAxis?: am4charts.ValueAxis;
   zIndex?: number;
+  numberFormat?: string;
 }
 
 const createLineSeries = (
@@ -44,15 +45,14 @@ const createLineSeries = (
   series.zIndex = config?.zIndex ? config.zIndex : 2;
 
   if (!config.skipBullets) {
-    let bulllets = series.bullets.push(new am4charts.CircleBullet());
-    bulllets.fill = am4core.color(palette.stroke);
-    bulllets.strokeWidth = config?.bulletWidth ? config.bulletWidth : 1;
-    bulllets.tooltipText = "{valueY}";
-    if (bulllets.tooltip) {
-      bulllets.tooltip.autoTextColor = false;
-      bulllets.tooltip.getFillFromObject = false;
-      bulllets.tooltip.label.fill = am4core.color(palette.stroke);
-    }
+    let bullets = series.bullets.push(new am4charts.CircleBullet());
+    bullets.fill = am4core.color(palette.stroke);
+    bullets.strokeWidth = config?.bulletWidth ? config.bulletWidth : 1;
+    bullets.tooltipText = "{valueY}";
+    series.numberFormatter = new am4core.NumberFormatter();
+    series.numberFormatter.numberFormat = config.numberFormat
+      ? config.numberFormat
+      : "#.##########";
   }
   series.data = data;
 

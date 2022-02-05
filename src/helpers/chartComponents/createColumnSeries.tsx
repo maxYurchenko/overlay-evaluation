@@ -1,7 +1,7 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 
-import theme from "../../../../styles/variables";
+import theme from "../../styles/variables";
 
 interface Config {
   valueX: string;
@@ -48,9 +48,10 @@ const createColumnSeries = (
     series.tooltip.autoTextColor = false;
     series.tooltip.getFillFromObject = false;
     series.tooltip.label.fill = am4core.color(palette.tooltip);
-    /*series.tooltip.numberFormatter.numberFormat = config?.numberFormat
+    series.numberFormatter = new am4core.NumberFormatter();
+    series.numberFormatter.numberFormat = config.numberFormat
       ? config.numberFormat
-      : "$#a";*/
+      : "#.##";
   }
 
   if (config.specificXAxis) series.xAxis = config.specificXAxis;
