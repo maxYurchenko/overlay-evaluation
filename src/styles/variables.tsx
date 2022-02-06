@@ -19,6 +19,17 @@ const theme = {
     highlight: "34px",
     title: "32px",
     logo: "20px"
+  },
+  drawer: { width: 280 },
+  mediaQueries: {
+    sm: "(max-width: 600px)",
+    md: "(max-width: 900px)",
+    lg: "(max-width: 1200px)"
+  },
+  breakpoints: {
+    sm: 600,
+    md: 900,
+    lg: 1200
   }
 };
 

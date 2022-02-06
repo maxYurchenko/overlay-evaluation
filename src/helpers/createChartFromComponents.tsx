@@ -3,13 +3,15 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-import createLegend from "./chartComponents/createLegend";
-import createTitle from "./chartComponents/createTitle";
-import getXAxis from "./chartComponents/createXAxis";
-import getYAxis from "./chartComponents/getYAxis";
-import createColumnSeries from "./chartComponents/createColumnSeries";
-import createLineSeries from "./chartComponents/createLineSeries";
+import createLegend from "./chartComponents/legend";
+import createTitle from "./chartComponents/title";
+import getXAxis from "./chartComponents/xAxis";
+import getYAxis from "./chartComponents/yAxis";
+import createColumnSeries from "./chartComponents/columnSeries";
+import createLineSeries from "./chartComponents/lineSeries";
 import { SeriesConfig } from "../types/seriesConfig";
+import createCursor from "./chartComponents/cursor";
+import createScrollBar from "./chartComponents/scrollbar";
 
 am4core.useTheme(am4themes_material);
 am4core.useTheme(am4themes_animated);
@@ -24,7 +26,7 @@ const createChartFromComponents = (
     getXAxis(chart);
     getYAxis(chart);
 
-    createColumnSeries(chart, columnData.data, {
+    const columnSeries = createColumnSeries(chart, columnData.data, {
       valueY: "value",
       valueX: "date",
       name: columnData.label
@@ -34,15 +36,17 @@ const createChartFromComponents = (
       disableRenderer: true
     });
 
-    createLineSeries(chart, lineData.data, {
+    const lineSeries = createLineSeries(chart, lineData.data, {
       valueY: "value",
       valueX: "date",
       name: lineData.label,
       specificYAxis: valueAxisHidden
     });
 
+    createScrollBar(chart, [lineSeries, columnSeries]);
     createLegend(chart);
     createTitle(chart, `${columnData.label} & ${lineData.label}`);
+    createCursor(chart);
   }
   return chart;
 };

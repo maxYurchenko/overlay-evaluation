@@ -1,13 +1,11 @@
 import "./App.css";
-import Menu from "./components/Menu/Menu";
-import Dashboard from "./components/Dashboard/Dashboard";
 import { Box } from "@mui/system";
+import AppWrapper from "./components/AppWrapper/AppWrapper";
 
 function App() {
   return (
     <Box>
-      <Menu />
-      <Dashboard />
+      <AppWrapper />
     </Box>
   );
 }
