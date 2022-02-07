@@ -3,7 +3,7 @@ import { SeriesConfig } from "../types/seriesConfig";
 const generateLineData = (
   columnData: SeriesConfig,
   lineData: SeriesConfig
-): SeriesConfig => {
+): [SeriesConfig, SeriesConfig] => {
   const result: SeriesConfig = {
     label: lineData.label,
     data: []
@@ -19,7 +19,7 @@ const generateLineData = (
       }
     });
   });
-  return result;
+  return [columnData, result];
 };
 
 export default generateLineData;

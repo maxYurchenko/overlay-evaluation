@@ -8,7 +8,7 @@ import {
   grossMarginLineQuery,
   revenueBarQuery
 } from "../../../helpers/queries";
-import ChartWrapper from "./Chart/ChartWrapper";
+import Chart from "./Chart/Chart";
 import { useMediaQuery } from "@mui/material";
 import theme from "../../../styles/variables";
 import TableWrapper from "./Table/TableWrapper";
@@ -67,7 +67,7 @@ const Dashboard = () => {
             direction={isTabletOrMobile ? "row" : "column"}
           >
             <Grid item xs={12} md={12} lg={6}>
-              <ChartWrapper
+              <Chart
                 columnQuery={revenueBarQuery}
                 lineQuery={grossMarginLineQuery}
                 id="chart1"
@@ -75,7 +75,7 @@ const Dashboard = () => {
               />
             </Grid>
             <Grid item xs={12} md={12} lg={6}>
-              <ChartWrapper
+              <Chart
                 columnQuery={revenueBarQuery}
                 lineQuery={grossMarginLineQuery}
                 id="chart2"

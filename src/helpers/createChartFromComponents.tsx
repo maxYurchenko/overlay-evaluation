@@ -19,7 +19,10 @@ am4core.useTheme(am4themes_animated);
 const createChartFromComponents = (
   id: string,
   columnData: SeriesConfig | null,
-  lineData: SeriesConfig | null
+  lineData: SeriesConfig | null,
+  config?: {
+    lineDataSeprateAxis: boolean;
+  }
 ): am4charts.XYChart => {
   let chart = am4core.create(id, am4charts.XYChart);
   if (columnData && lineData) {
@@ -32,9 +35,11 @@ const createChartFromComponents = (
       name: columnData.label
     });
 
-    const valueAxisHidden = getYAxis(chart, {
-      disableRenderer: true
-    });
+    const valueAxisHidden = config?.lineDataSeprateAxis
+      ? getYAxis(chart, {
+          disableRenderer: true
+        })
+      : undefined;
 
     const lineSeries = createLineSeries(chart, lineData.data, {
       valueY: "value",
