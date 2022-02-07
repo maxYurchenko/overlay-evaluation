@@ -25,9 +25,6 @@ const useStyles = createUseStyles({
   tableContainer: {
     flex: "1 1 100%"
   },
-  tableHead: {
-    fontWeight: 500
-  },
   table: {
     fontSize: theme.fontSize.s,
     color: theme.colors.asphalt,

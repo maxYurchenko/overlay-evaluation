@@ -1,16 +1,7 @@
 import { createUseStyles } from "react-jss";
 import theme from "../../../../styles/variables";
 
-const base = {
-  color: theme.colors.white
-};
 const useStyles = createUseStyles({
-  wrapper: {
-    width: "100%",
-    padding: "35px 35px 35px 0",
-    backgroundColor: theme.colors.transparent,
-    boxShadow: "none"
-  },
   list: {
     display: "flex",
     flexDirection: "row",
@@ -26,8 +17,6 @@ const useStyles = createUseStyles({
       color: theme.colors.lightGreen
     }
   },
-  icon: { color: theme.colors.asphalt, minWidth: "24px" },
-
   drawer: {
     transition: "width 0.5s linear",
     zIndex: 1500,
@@ -36,7 +25,7 @@ const useStyles = createUseStyles({
     boxShadow: "none"
   },
   logo: {
-    ...base,
+    color: theme.colors.white,
     fontSize: theme.fontSize.logo,
     fontWeight: 500,
     paddingLeft: "16px"
@@ -61,14 +50,14 @@ const useStyles = createUseStyles({
   },
   hamburgerMenu: {},
   [`@media ${theme.mediaQueries.md}`]: {
-    listIcon: { minWidth: 0, marginLeft: 30 }
+    listIcon: { minWidth: 0, marginLeft: 30 },
+    hamburgerMenu: {
+      color: theme.colors.asphalt
+    }
   },
   [`@media ${theme.mediaQueries.sm}`]: {
     toolbar: {
       minHeight: "60px"
-    },
-    hamburgerMenu: {
-      color: theme.colors.lightGreen
     }
   }
 });

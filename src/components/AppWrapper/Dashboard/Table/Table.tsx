@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   Column,
   Table as TableVirtualized,
@@ -22,11 +23,19 @@ interface TableDataRow {
 
 const Table = (props: Props) => {
   const classes = useStyles();
+  const tableRef = useRef<TableVirtualized>(null);
 
   return (
-    <AutoSizer>
+    <AutoSizer
+      onResize={() => {
+        if (tableRef.current) {
+          tableRef.current.recomputeRowHeights();
+        }
+      }}
+    >
       {({ height, width }) => (
         <TableVirtualized
+          ref={tableRef}
           className={classes.table}
           width={width}
           height={height}

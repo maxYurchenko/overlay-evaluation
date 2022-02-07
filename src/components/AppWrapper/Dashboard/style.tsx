@@ -19,18 +19,14 @@ const useStyles = createUseStyles({
   tableWrapper: { display: "flex" },
   [`@media ${theme.mediaQueries.md}`]: {
     wrapper: {
-      marginLeft: 60,
-      width: `calc(100% - ${60}px)`
+      marginLeft: 0,
+      width: `100%`
     },
     main: {
       padding: "0 30px"
     }
   },
   [`@media ${theme.mediaQueries.sm}`]: {
-    wrapper: {
-      marginLeft: 0,
-      width: `100%`
-    },
     main: {
       padding: "0 15px"
     }
