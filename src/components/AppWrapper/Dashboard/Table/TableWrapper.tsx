@@ -12,7 +12,7 @@ const data = {
   revenue: 6000,
   costOfGoods: 2000
 };
-const rows = 50;
+const rows = 3000;
 
 const TableWrapper = () => {
   const classes = useStyles();
