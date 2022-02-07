@@ -1,7 +1,7 @@
-import cubejs, { Query, ResultSet, Series } from "@cubejs-client/core";
+import cubejs, { Query, Series } from "@cubejs-client/core";
 import { SeriesConfig } from "../types/seriesConfig";
 
-interface cubeData {
+interface CubeData {
   x: Date;
   value: number;
 }
@@ -19,12 +19,15 @@ export async function getDataFromCube(query: () => Query): Promise<any> {
   });
   const resultSet = await cubejsApi.load(query());
 
-  let result: SeriesConfig = { label: "", data: [] };
+  const result: SeriesConfig = { label: "", data: [] };
 
-  resultSet.series().forEach((item: Series<cubeData>) => {
+  resultSet.series().forEach((item: Series<CubeData>) => {
     result.label = result.label ? result.label : item.title;
-    item.series.forEach((item) => {
-      result.data.push({ value: item.value, date: new Date(item.x) });
+    item.series.forEach((dataForChart: CubeData) => {
+      result.data.push({
+        value: dataForChart.value,
+        date: new Date(dataForChart.x)
+      });
     });
   });
   return result;

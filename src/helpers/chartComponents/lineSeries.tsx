@@ -16,7 +16,7 @@ const createLineSeries = (
   data: any,
   config: Config
 ): am4charts.LineSeries => {
-  let series = chart.series.push(new am4charts.LineSeries());
+  const series = chart.series.push(new am4charts.LineSeries());
 
   series.dataFields.valueY = config.valueY;
   series.dataFields.dateX = config.valueX;
@@ -40,7 +40,7 @@ const createLineSeries = (
     series.tooltip.background.fill = am4core.color(theme.colors.lightGreen);
   }
 
-  let bullets = series.bullets.push(new am4charts.CircleBullet());
+  const bullets = series.bullets.push(new am4charts.CircleBullet());
   bullets.fill = am4core.color(theme.colors.lightGreen);
   bullets.circle.radius = 4;
 

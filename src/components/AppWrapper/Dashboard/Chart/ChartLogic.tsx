@@ -20,13 +20,14 @@ interface Props {
 
 const ChartLogic = (props: Props) => {
   const [chart, setChart] = useState<null | XYChart>(null);
+  const { id, dataProcessingFunction, columnQuery, lineQuery } = props;
 
   const lineRequest = useHttp(getDataFromCube);
   const columnRequest = useHttp(getDataFromCube);
 
   useEffect(() => {
-    columnRequest.sendRequest(props.columnQuery);
-    lineRequest.sendRequest(props.lineQuery);
+    columnRequest.sendRequest(columnQuery);
+    lineRequest.sendRequest(lineQuery);
   }, []);
 
   useEffect(() => {
@@ -38,12 +39,8 @@ const ChartLogic = (props: Props) => {
     )
       return;
 
-    if (
-      props.dataProcessingFunction &&
-      columnRequest.data &&
-      lineRequest.data
-    ) {
-      [columnRequest.data, lineRequest.data] = props.dataProcessingFunction(
+    if (dataProcessingFunction && columnRequest.data && lineRequest.data) {
+      [columnRequest.data, lineRequest.data] = dataProcessingFunction(
         columnRequest.data,
         lineRequest.data
       );
@@ -52,11 +49,11 @@ const ChartLogic = (props: Props) => {
     if (!chart) {
       setChart(
         createChartFromComponents(
-          props.id,
+          id,
           columnRequest.data ? columnRequest.data : null,
           lineRequest.data ? lineRequest.data : null,
           {
-            lineDataSeprateAxis: props.dataProcessingFunction ? false : true
+            lineDataSeprateAxis: dataProcessingFunction ? false : true
           }
         )
       );
@@ -68,13 +65,7 @@ const ChartLogic = (props: Props) => {
         setChart(null);
       }
     };
-  }, [columnRequest, lineRequest, chart]);
-
-  useEffect(() => {
-    return () => {
-      chart && chart.dispose();
-    };
-  }, []);
+  }, [columnRequest, lineRequest, chart, id, dataProcessingFunction]);
 
   if (
     columnRequest.status !== "completed" ||

@@ -1,10 +1,6 @@
 import { createUseStyles } from "react-jss";
 import theme from "../../styles/variables";
 
-const base = {
-  color: theme.colors.white
-};
-
 const useStyles = createUseStyles({
   wrapper: {
     display: "flex",

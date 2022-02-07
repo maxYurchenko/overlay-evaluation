@@ -24,7 +24,7 @@ const createChartFromComponents = (
     lineDataSeprateAxis: boolean;
   }
 ): am4charts.XYChart => {
-  let chart = am4core.create(id, am4charts.XYChart);
+  const chart = am4core.create(id, am4charts.XYChart);
   if (columnData && lineData) {
     getXAxis(chart);
     getYAxis(chart);

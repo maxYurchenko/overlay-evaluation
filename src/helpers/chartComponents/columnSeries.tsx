@@ -16,7 +16,7 @@ const createColumnSeries = (
   data: any,
   config: Config
 ): am4charts.ColumnSeries => {
-  let series = chart.series.push(new am4charts.ColumnSeries());
+  const series = chart.series.push(new am4charts.ColumnSeries());
 
   series.dataFields.valueY = config.valueY;
   series.dataFields.dateX = config.valueX;

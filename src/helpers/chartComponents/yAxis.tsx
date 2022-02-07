@@ -11,7 +11,7 @@ const getYAxis = (
   chart: am4charts.XYChart,
   config?: Config
 ): am4charts.ValueAxis => {
-  let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
   valueAxis.numberFormatter.numberFormat = "$#a";
 

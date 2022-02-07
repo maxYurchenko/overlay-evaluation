@@ -4,12 +4,12 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import theme from "../../styles/variables";
 
 interface Config {
-  dateFormats?: dateFormat;
+  dateFormats?: DateFormat;
   baseInterval?: am4core.ITimeInterval;
   disableRenderer?: boolean;
 }
 
-interface dateFormat {
+interface DateFormat {
   timeUnit: am4core.TimeUnit;
   format: string;
 }
@@ -18,11 +18,11 @@ const getXAxis = (
   chart: am4charts.XYChart,
   config?: Config
 ): am4charts.DateAxis => {
-  let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+  const dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 
   dateAxis.renderer.minGridDistance = 30;
 
-  const dateFormats: dateFormat = config?.dateFormats
+  const dateFormats: DateFormat = config?.dateFormats
     ? config.dateFormats
     : { timeUnit: "month", format: `MMM\nyyyy` };
 

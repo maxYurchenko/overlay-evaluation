@@ -16,11 +16,7 @@ const ChartLoaderBar = () => {
   }, [height]);
 
   return (
-    <Skeleton
-      variant="text"
-      className={classes.chartColumn}
-      sx={{ height: height }}
-    />
+    <Skeleton variant="text" className={classes.chartColumn} sx={{ height }} />
   );
 };
 

@@ -1,4 +1,4 @@
-import { Query, ResultSet } from "@cubejs-client/core";
+import { Query } from "@cubejs-client/core";
 import { useReducer, useCallback } from "react";
 import { SeriesConfig } from "../types/seriesConfig";
 
@@ -15,7 +15,7 @@ interface State {
   status: "pending" | "completed" | null;
 }
 
-function httpReducer(state: State, action: Action): State {
+const httpReducer = (state: State, action: Action): State => {
   if (action.type === "SENDING") {
     return {
       data: null,
@@ -41,12 +41,12 @@ function httpReducer(state: State, action: Action): State {
   }
 
   return state;
-}
+};
 
-function useHttp(
+const useHttp = (
   requestFunction: (query: () => Query) => Promise<any>,
   startWithPending = false
-) {
+) => {
   const [httpState, dispatch] = useReducer(httpReducer, {
     status: startWithPending ? "pending" : null,
     data: null,
@@ -54,7 +54,7 @@ function useHttp(
   });
 
   const sendRequest = useCallback(
-    async function (requestData: () => Query) {
+    async (requestData: () => Query) => {
       dispatch({ type: "SENDING" });
       try {
         const responseData: SeriesConfig = await requestFunction(requestData);
@@ -73,6 +73,6 @@ function useHttp(
     sendRequest,
     ...httpState
   };
-}
+};
 
 export default useHttp;
