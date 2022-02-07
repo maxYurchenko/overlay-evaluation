@@ -9,13 +9,14 @@ const useStyles = createUseStyles({
     overflow: "auto"
   },
   main: {
-    padding: "0 60px"
+    padding: "0 60px 20px 60px"
   },
   dashBoardTitle: {
     fontSize: theme.fontSize.title,
     color: theme.colors.lightGreen,
     margin: "0 0 40px 0"
   },
+  tableWrapper: { display: "flex" },
   [`@media ${theme.mediaQueries.md}`]: {
     wrapper: {
       marginLeft: 60,

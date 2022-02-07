@@ -54,11 +54,21 @@ const useStyles = createUseStyles({
       "&:hover": {
         color: theme.colors.darkGreen
       }
+    },
+    "& $hamburgerMenu": {
+      color: theme.colors.white
     }
+  },
+  hamburgerMenu: {},
+  [`@media ${theme.mediaQueries.md}`]: {
+    listIcon: { minWidth: 0, marginLeft: 30 }
   },
   [`@media ${theme.mediaQueries.sm}`]: {
     toolbar: {
-      minHeight: "0"
+      minHeight: "60px"
+    },
+    hamburgerMenu: {
+      color: theme.colors.lightGreen
     }
   }
 });

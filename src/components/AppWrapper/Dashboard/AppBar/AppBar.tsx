@@ -53,6 +53,7 @@ const AppBar = (props: Props) => {
             aria-label="open drawer"
             onClick={props.handleDrawerOpen}
             edge="start"
+            className={classes.hamburgerMenu}
           >
             <MenuIcon />
           </IconButton>

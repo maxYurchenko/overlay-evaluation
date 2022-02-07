@@ -8,7 +8,8 @@ const base = {
 const useStyles = createUseStyles({
   wrapper: {
     display: "flex",
-    backgroundColor: theme.colors.background
+    backgroundColor: theme.colors.background,
+    minHeight: "100vh"
   },
   header: {
     display: "flex",

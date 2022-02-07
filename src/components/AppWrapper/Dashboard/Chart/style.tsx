@@ -3,7 +3,7 @@ import theme from "../../../../styles/variables";
 
 const useStyles = createUseStyles({
   chartWrapper: {
-    height: 330
+    minHeight: 290
   }
 });
 

@@ -61,29 +61,38 @@ const Dashboard = () => {
             item
             container
             spacing={3}
-            xs={12}
-            md={12}
-            lg={6}
-            direction={isTabletOrMobile ? "row" : "column"}
+            direction="row"
+            alignItems="stretch"
+            justifyContent="center"
           >
-            <Grid item xs={12} md={12} lg={6}>
-              <Chart
-                columnQuery={revenueBarQuery}
-                lineQuery={grossMarginLineQuery}
-                id="chart1"
-                dataProcessingFunction={generateLineData}
-              />
+            <Grid
+              item
+              container
+              spacing={3}
+              xs={12}
+              md={12}
+              lg={6}
+              direction={isTabletOrMobile ? "row" : "column"}
+            >
+              <Grid item xs={12} md={12} lg={6}>
+                <Chart
+                  columnQuery={revenueBarQuery}
+                  lineQuery={grossMarginLineQuery}
+                  id="chart1"
+                  dataProcessingFunction={generateLineData}
+                />
+              </Grid>
+              <Grid item xs={12} md={12} lg={6}>
+                <Chart
+                  columnQuery={revenueBarQuery}
+                  lineQuery={grossMarginLineQuery}
+                  id="chart2"
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={12} lg={6}>
-              <Chart
-                columnQuery={revenueBarQuery}
-                lineQuery={grossMarginLineQuery}
-                id="chart2"
-              />
+            <Grid item xs={12} md={12} lg={6} className={classes.tableWrapper}>
+              <TableWrapper />
             </Grid>
-          </Grid>
-          <Grid item xs={12} md={12} lg={6}>
-            <TableWrapper />
           </Grid>
         </Grid>
       </Box>

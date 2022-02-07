@@ -31,7 +31,7 @@ const TableWrapper = () => {
       <Typography ref={titleRef} variant="h5" className={classes.tabeTitle}>
         Revenue Details
       </Typography>
-      <Box sx={{ height: 520 - titleHeight }}>
+      <Box className={classes.tableContainer}>
         <Table data={dataList} />
       </Box>
     </Paper>

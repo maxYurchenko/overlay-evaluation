@@ -9,6 +9,8 @@ const createTitle = (chart: am4charts.XYChart, labelText: string): void => {
   title.fontSize = theme.fontSize.menu;
   title.fill = am4core.color(theme.colors.asphalt);
   title.align = "left";
+  title.truncate = false;
+  title.wrap = true;
 };
 
 export default createTitle;

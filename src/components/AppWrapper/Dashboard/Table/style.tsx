@@ -12,14 +12,18 @@ const useStyles = createUseStyles({
   wrapper: {
     padding: "20px",
     color: theme.colors.asphalt,
-    maxHeight: 625,
     width: "auto",
-    height: 550
+    flex: "1 1 100%",
+    display: "flex",
+    flexDirection: "column"
   },
   tabeTitle: {
     fontSize: theme.fontSize.menu,
     marginLeft: "10px",
     marginBottom: "25px"
+  },
+  tableContainer: {
+    flex: "1 1 100%"
   },
   tableHead: {
     fontWeight: 500
@@ -31,6 +35,9 @@ const useStyles = createUseStyles({
     "& .ReactVirtualized__Table__headerRow": {
       textTransform: "inherit"
     }
+  },
+  [`@media ${theme.mediaQueries.lg}`]: {
+    wrapper: { height: 500 }
   }
 });
 
