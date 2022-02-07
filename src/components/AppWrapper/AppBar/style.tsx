@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../../../styles/variables";
+import theme from "../../../styles/variables";
 
 const useStyles = createUseStyles({
   list: {
@@ -11,10 +11,13 @@ const useStyles = createUseStyles({
   },
   listItem: { margin: "0 0 0 0", padding: 0 },
   listIcon: {
-    color: theme.colors.asphalt,
-    transition: "0.15s all linear",
-    "&:hover": {
-      color: theme.colors.lightGreen
+    "& span": {
+      cursor: "pointer",
+      color: theme.colors.asphalt,
+      transition: "0.15s all linear",
+      "&:hover": {
+        color: theme.colors.lightGreen
+      }
     }
   },
   drawer: {
@@ -38,16 +41,19 @@ const useStyles = createUseStyles({
   },
   headerScrolled: {
     background: theme.colors.lightGreen,
-    "& $listIcon": {
-      color: theme.colors.white,
-      "&:hover": {
-        color: theme.colors.darkGreen
+    "& $listIcon ": {
+      "& span": {
+        color: theme.colors.white,
+        "&:hover": {
+          color: theme.colors.darkGreen
+        }
       }
     },
     "& $hamburgerMenu": {
       color: theme.colors.white
     }
   },
+  hidden: { display: "none" },
   hamburgerMenu: {},
   [`@media ${theme.mediaQueries.md}`]: {
     listIcon: { minWidth: 0, marginLeft: 30 },

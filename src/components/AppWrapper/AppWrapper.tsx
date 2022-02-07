@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import useStyles from "./style";
 import { useEffect, useState } from "react";
 import Menu from "./Menu/Menu";
-import AppBar from "./Dashboard/AppBar/AppBar";
+import AppBar from "./AppBar/AppBar";
 import { useMediaQuery } from "@mui/material";
 import theme from "../../styles/variables";
 import Dashboard from "./Dashboard/Dashboard";

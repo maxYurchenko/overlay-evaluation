@@ -16,17 +16,23 @@ const useStyles = createUseStyles({
     color: theme.colors.lightGreen,
     margin: "0 0 40px 0"
   },
-  tableWrapper: { display: "flex" },
+  tableWrapper: {
+    display: "flex"
+  },
   [`@media ${theme.mediaQueries.md}`]: {
     wrapper: {
       marginLeft: 0,
       width: `100%`
     },
     main: {
-      padding: "0 30px"
+      padding: "0 30px 20px 30px"
     }
   },
   [`@media ${theme.mediaQueries.sm}`]: {
+    tableWrapper: {
+      overflow: "scroll",
+      width: "0px"
+    },
     main: {
       padding: "0 15px"
     }

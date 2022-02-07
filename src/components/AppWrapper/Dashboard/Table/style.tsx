@@ -35,6 +35,11 @@ const useStyles = createUseStyles({
   },
   [`@media ${theme.mediaQueries.lg}`]: {
     wrapper: { height: 500 }
+  },
+  [`@media ${theme.mediaQueries.sm}`]: {
+    wrapper: {
+      minWidth: "600px"
+    }
   }
 });
 

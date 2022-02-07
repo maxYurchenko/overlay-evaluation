@@ -3,19 +3,19 @@ import theme from "../../../styles/variables";
 
 const useStyles = createUseStyles({
   menuWrapper: {
-    display: { xs: "none", sm: "block" },
     "& .MuiDrawer-paper": {
-      transition: "0.5s width linear",
       width: 280,
       boxSizing: "border-box",
       background: theme.colors.lightGreen,
       overflow: "hidden",
       color: theme.colors.white,
-      border: "none"
+      border: "none",
+      transition: "cubic-bezier(0.3, 0.46, 0.45, 0.94) .5s",
+      transform: "translateX(0)"
     },
     "&$closed": {
       "& .MuiDrawer-paper": {
-        width: 0
+        transform: "translateX(-100%)"
       }
     }
   },

@@ -3,10 +3,9 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { Icon, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Icon } from "@mui/material";
 
 import useStyles from "./style";
-import theme from "../../../styles/variables";
 
 const menuItems = [
   { title: "Home", icon: "home" },
@@ -23,7 +22,6 @@ const Menu = (props: Props) => {
   return (
     <Drawer
       variant="permanent"
-      open={props.open}
       className={`${classes.menuWrapper} ${props.open ? "" : classes.closed}`}
     >
       <div className={classes.header}></div>
@@ -31,11 +29,11 @@ const Menu = (props: Props) => {
       <List>
         {menuItems.map((item, index) => (
           <ListItem
-            className={`${classes.menuItem}  ${
-              props.open ? "" : classes.closed
-            } ${item.active ? classes.active : ""}`}
+            className={`${classes.menuItem} ${
+              item.active ? classes.active : ""
+            }`}
             button
-            key={`MenuItem${item.title}`}
+            key={`MenuItem${index}`}
           >
             <ListItemIcon className={classes.icon}>
               <Icon>{item.icon}</Icon>
