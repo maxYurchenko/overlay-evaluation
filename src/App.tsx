@@ -1,9 +1,9 @@
 import "./App.css";
 import AppWrapper from "./components/AppWrapper/AppWrapper";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { defaultTheme } from "./styles/variables";
+import themeVariables from "./styles/variables";
 
-const theme = createTheme(defaultTheme);
+const theme = createTheme(themeVariables);
 
 function App() {
   return (

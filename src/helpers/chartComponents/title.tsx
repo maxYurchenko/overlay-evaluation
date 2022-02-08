@@ -6,8 +6,8 @@ import theme from "../../styles/variables";
 const createTitle = (chart: am4charts.XYChart, labelText: string): void => {
   const title = chart.titles.create();
   title.text = labelText;
-  title.fontSize = theme.fontSize.menu;
-  title.fill = am4core.color(theme.colors.asphalt);
+  title.fontSize = theme.typography.h3.fontSize;
+  title.fill = am4core.color(theme.palette.text.primary);
   title.align = "left";
   title.truncate = false;
   title.wrap = true;

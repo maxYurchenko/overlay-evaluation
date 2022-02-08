@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../../styles/variables";
+import theme, { breakPoints } from "../../../styles/variables";
 
 const noPaddingMargin = {
   margin: 0,
@@ -38,7 +38,7 @@ const useStyles = createUseStyles({
             cursor: "pointer",
             transition: "0.15s all linear",
             "&:hover": {
-              color: theme.colors.lightGreen
+              color: theme.palette.primary.main
             }
           }
         }
@@ -49,23 +49,23 @@ const useStyles = createUseStyles({
   toolbar: {},
   headerScrolled: {
     "& $toolbar": { padding: "15px 40px" },
-    background: theme.colors.lightGreen,
+    background: theme.palette.primary,
     "& $listIcon ": {
       "& span": {
-        color: theme.colors.white,
+        color: theme.palette.text.secondary,
         "&:hover": {
-          color: theme.colors.darkGreen
+          color: theme.palette.primary.dark
         }
       }
     },
     "& $hamburgerMenu": {
-      color: theme.colors.white
+      color: theme.palette.text.secondary
     }
   },
-  [`@media ${theme.mediaQueries.md}`]: {
+  [`@media ${breakPoints.mediaQueries.md}`]: {
     listIcon: { minWidth: 0, marginLeft: 30 },
     hamburgerMenu: {
-      color: theme.colors.asphalt
+      color: theme.palette.text.primary
     },
     appBar: {
       "& $toolbar": {
@@ -73,7 +73,7 @@ const useStyles = createUseStyles({
       }
     }
   },
-  [`@media ${theme.mediaQueries.sm}`]: {}
+  [`@media ${breakPoints.mediaQueries.sm}`]: {}
 });
 
 export default useStyles;

@@ -21,8 +21,12 @@ const getYAxis = (
   valueAxis.renderer.baseGrid.disabled = true;
   valueAxis.cursorTooltipEnabled = false;
 
-  valueAxis.renderer.grid.template.stroke = am4core.color(theme.colors.grey);
-  valueAxis.renderer.labels.template.fill = am4core.color(theme.colors.asphalt);
+  valueAxis.renderer.grid.template.stroke = am4core.color(
+    theme.palette.secondary.main
+  );
+  valueAxis.renderer.labels.template.fill = am4core.color(
+    theme.palette.text.primary
+  );
   valueAxis.renderer.labels.template.align = "left";
 
   if (config?.disableRenderer) valueAxis.renderer.disabled = true;

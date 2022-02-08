@@ -22,8 +22,8 @@ const createColumnSeries = (
   series.dataFields.dateX = config.valueX;
   series.name = config.name;
 
-  series.columns.template.fill = am4core.color(theme.colors.grey);
-  series.columns.template.stroke = am4core.color(theme.colors.grey);
+  series.columns.template.fill = am4core.color(theme.palette.secondary.main);
+  series.columns.template.stroke = am4core.color(theme.palette.secondary.main);
 
   series.columns.template.column.cornerRadiusTopRight = 6;
   series.columns.template.column.cornerRadiusTopLeft = 6;
@@ -37,8 +37,8 @@ const createColumnSeries = (
   if (series.tooltip) {
     series.tooltip.autoTextColor = false;
     series.tooltip.getFillFromObject = false;
-    series.tooltip.label.fill = am4core.color(theme.colors.white);
-    series.tooltip.background.fill = am4core.color(theme.colors.asphalt);
+    series.tooltip.label.fill = am4core.color(theme.palette.text.secondary);
+    series.tooltip.background.fill = am4core.color(theme.palette.text.primary);
     series.dateFormatter = new am4core.DateFormatter();
     series.dateFormatter.dateFormat = "MMM yyyy";
   }

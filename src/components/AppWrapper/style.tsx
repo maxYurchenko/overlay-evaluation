@@ -1,10 +1,9 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../styles/variables";
+import theme, { breakPoints } from "../../styles/variables";
 
 const useStyles = createUseStyles({
   wrapper: {
     display: "flex",
-    backgroundColor: theme.colors.background,
     minHeight: "100vh"
   },
   siteWrapper: {
@@ -24,7 +23,7 @@ const useStyles = createUseStyles({
     justifyContent: "flex-end",
     height: 90
   },
-  [`@media ${theme.mediaQueries.sm}`]: {
+  [`@media ${breakPoints.mediaQueries.sm}`]: {
     header: {
       height: "64px"
     }

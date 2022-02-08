@@ -10,13 +10,13 @@ import {
 } from "../../../helpers/queries";
 import Chart from "./Chart/Chart";
 import { useMediaQuery } from "@mui/material";
-import theme from "../../../styles/variables";
+import { breakPoints } from "../../../styles/variables";
 import TableWrapper from "./Table/TableWrapper";
 import generateLineData from "../../../helpers/generateLineData";
 
 const Dashboard = () => {
   const classes = useStyles();
-  const isTabletOrMobile = useMediaQuery(theme.mediaQueries.lg, {
+  const isTabletOrMobile = useMediaQuery(breakPoints.mediaQueries.lg, {
     noSsr: true
   });
   return (
@@ -25,7 +25,7 @@ const Dashboard = () => {
         <Typography variant="h1" color="primary">
           My Dashboard
         </Typography>
-        <Grid sx={{ marginTop: "50px" }} container spacing={3}>
+        <Grid sx={{ marginTop: "15px" }} container spacing={3}>
           <Grid item xs={12} sm={6} md={6} lg={3}>
             <QuickStat
               title="Revenue"

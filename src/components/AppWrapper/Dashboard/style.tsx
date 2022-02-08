@@ -1,17 +1,14 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../../styles/variables";
+import { breakPoints } from "../../../styles/variables";
 
 const useStyles = createUseStyles({
-  dashboardWrapper: {
-    marginTop: 50
-  },
   main: {
     padding: "0 60px 20px 60px"
   },
   tableWrapper: {
     display: "flex"
   },
-  [`@media ${theme.mediaQueries.md}`]: {
+  [`@media ${breakPoints.mediaQueries.md}`]: {
     wrapper: {
       marginLeft: 0,
       width: `100%`
@@ -20,7 +17,7 @@ const useStyles = createUseStyles({
       padding: "0 30px 20px 30px"
     }
   },
-  [`@media ${theme.mediaQueries.sm}`]: {
+  [`@media ${breakPoints.mediaQueries.sm}`]: {
     tableWrapper: {
       overflow: "scroll",
       width: "0px"

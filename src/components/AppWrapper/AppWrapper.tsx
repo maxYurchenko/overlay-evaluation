@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Menu from "./Menu/Menu";
 import AppBar from "./AppBar/AppBar";
 import { useMediaQuery } from "@mui/material";
-import theme from "../../styles/variables";
+import { breakPoints } from "../../styles/variables";
 import Dashboard from "./Dashboard/Dashboard";
 
 const AppWrapper = () => {
   const classes = useStyles();
-  const isTabletOrMobile = useMediaQuery(theme.mediaQueries.md, {
+  const isTabletOrMobile = useMediaQuery(breakPoints.mediaQueries.md, {
     noSsr: true
   });
   const [open, setOpen] = useState(!isTabletOrMobile);
@@ -27,7 +27,7 @@ const AppWrapper = () => {
   };
 
   return (
-    <Box className={classes.wrapper}>
+    <Box className={classes.wrapper} sx={{ bgcolor: "background.default" }}>
       <Menu
         open={open}
         isTabletOrMobile={isTabletOrMobile}

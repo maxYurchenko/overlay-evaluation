@@ -33,9 +33,11 @@ const getXAxis = (
   );
 
   dateAxis.renderer.grid.template.stroke = am4core.color(
-    theme.colors.lightGrey
+    theme.palette.secondary.light
   );
-  dateAxis.renderer.labels.template.fill = am4core.color(theme.colors.asphalt);
+  dateAxis.renderer.labels.template.fill = am4core.color(
+    theme.palette.text.primary
+  );
 
   dateAxis.renderer.cellStartLocation = 0.1;
   dateAxis.renderer.cellEndLocation = 0.9;

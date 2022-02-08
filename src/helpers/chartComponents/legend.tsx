@@ -10,10 +10,10 @@ const getLegend = (chart: am4charts.XYChart): void => {
   chart.legend.align = "right";
   chart.legend.marginBottom = 20;
 
-  const color = am4core.color(theme.colors.asphalt);
+  const color = am4core.color(theme.palette.text.primary);
   chart.legend.labels.template.fill = color;
   chart.legend.valueLabels.template.fill = color;
-  chart.legend.fontSize = theme.fontSize.s;
+  chart.legend.fontSize = theme.typography.fontSize;
 };
 
 export default getLegend;

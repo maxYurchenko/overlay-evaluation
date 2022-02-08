@@ -3,16 +3,16 @@ import theme from "../../../../../styles/variables";
 
 const useStyles = createUseStyles({
   pill: {
-    color: theme.colors.white,
+    color: theme.palette.text.secondary,
     width: "115px",
-    fontSize: theme.fontSize.l,
+    fontSize: theme.typography.h3.fontSize,
     height: "auto",
     flexDirection: "row-reverse"
   },
-  drop: { backgroundColor: theme.colors.orange },
-  raise: { backgroundColor: theme.colors.grey },
+  drop: { backgroundColor: theme.palette.error },
+  raise: { backgroundColor: theme.palette.secondary.main },
   icon: {
-    fill: theme.colors.white
+    fill: theme.palette.text.secondary
   },
   wrapper: {
     textAlign: "center",
@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
     }
   },
   label: {
-    fontSize: theme.fontSize.s
+    fontSize: theme.typography.fontSize
   }
 });
 

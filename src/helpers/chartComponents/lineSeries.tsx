@@ -22,7 +22,7 @@ const createLineSeries = (
   series.dataFields.dateX = config.valueX;
   series.name = config.name;
 
-  series.stroke = am4core.color(theme.colors.lightGreen);
+  series.stroke = am4core.color(theme.palette.primary.main);
   series.strokeWidth = 2;
   series.tensionX = 0.8;
   series.tensionY = 0.8;
@@ -36,12 +36,12 @@ const createLineSeries = (
   if (series.tooltip) {
     series.tooltip.autoTextColor = false;
     series.tooltip.getFillFromObject = false;
-    series.tooltip.label.fill = am4core.color(theme.colors.white);
-    series.tooltip.background.fill = am4core.color(theme.colors.lightGreen);
+    series.tooltip.label.fill = am4core.color(theme.palette.text.secondary);
+    series.tooltip.background.fill = am4core.color(theme.palette.primary.main);
   }
 
   const bullets = series.bullets.push(new am4charts.CircleBullet());
-  bullets.fill = am4core.color(theme.colors.lightGreen);
+  bullets.fill = am4core.color(theme.palette.primary.main);
   bullets.circle.radius = 4;
 
   series.data = data;

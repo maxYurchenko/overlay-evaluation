@@ -1,17 +1,17 @@
 import { createUseStyles } from "react-jss";
-import theme from "../../../../styles/variables";
+import theme, { breakPoints } from "../../../../styles/variables";
 
 const useStyles = createUseStyles({
   wrapper: {
     padding: "20px",
-    color: theme.colors.asphalt,
+    color: theme.palette.text.primary,
     width: "auto",
     flex: "1 1 100%",
     display: "flex",
     flexDirection: "column"
   },
   tabeTitle: {
-    fontSize: theme.fontSize.menu,
+    fontSize: theme.typography.h3.fontSize,
     paddingLeft: "10px"
   },
   tableContainer: {
@@ -20,18 +20,18 @@ const useStyles = createUseStyles({
     boxSizing: "border-box"
   },
   table: {
-    fontSize: theme.fontSize.s,
-    color: theme.colors.asphalt,
+    fontSize: theme.typography.fontSize,
+    color: theme.palette.text.primary,
     border: "none",
     "& .ReactVirtualized__Table__headerRow": {
       textTransform: "inherit",
       paddingBottom: 20
     }
   },
-  [`@media ${theme.mediaQueries.lg}`]: {
+  [`@media ${breakPoints.mediaQueries.lg}`]: {
     wrapper: { height: 500 }
   },
-  [`@media ${theme.mediaQueries.sm}`]: {
+  [`@media ${breakPoints.mediaQueries.sm}`]: {
     wrapper: {
       minWidth: "600px"
     }
