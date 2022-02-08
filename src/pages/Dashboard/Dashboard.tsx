@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box";
 import useStyles from "./style";
 import { useEffect, useState } from "react";
-import Menu from "./Menu/Menu";
-import AppBar from "./AppBar/AppBar";
 import { useMediaQuery } from "@mui/material";
 import { breakPoints } from "../../styles/variables";
-import Dashboard from "./Dashboard/Dashboard";
+import Menu from "../../components/Menu/Menu";
+import AppBar from "../../components/AppBar/AppBar";
+import DashboardContent from "../../components/DashboardContent/DashboardContent";
 
-const AppWrapper = () => {
+const Dashboard = () => {
   const classes = useStyles();
   const isTabletOrMobile = useMediaQuery(breakPoints.mediaQueries.md, {
     noSsr: true
@@ -40,11 +40,11 @@ const AppWrapper = () => {
           handleDrawerOpen={handleDrawerOpen}
         />
         <Box component="main">
-          <Dashboard />
+          <DashboardContent />
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default AppWrapper;
+export default Dashboard;

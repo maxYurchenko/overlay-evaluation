@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import { breakPoints } from "../../../styles/variables";
+import { breakPoints } from "../../styles/variables";
 
 const useStyles = createUseStyles({
   main: {

@@ -1,7 +1,7 @@
 import Table from "./Table";
 
 import useStyles from "./style";
-import currencyFormatter from "../../../../helpers/currencyFormatter";
+import currencyFormatter from "../../../helpers/currencyFormatter";
 import { Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 

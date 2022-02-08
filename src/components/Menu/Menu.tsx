@@ -6,10 +6,11 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Icon, IconButton, Typography } from "@mui/material";
 
 import useStyles from "./style";
+import { NavLink } from "react-router-dom";
 
 const menuItems = [
-  { title: "Home", icon: "home" },
-  { title: "My Dashboard", icon: "dashboard", active: true }
+  { title: "Home", icon: "home", url: "/" },
+  { title: "My Dashboard", icon: "dashboard", url: "/dashboard" }
 ];
 
 interface Props {
@@ -44,18 +45,24 @@ const Menu = (props: Props) => {
 
       <List className={classes.list}>
         {menuItems.map((item, index) => (
-          <ListItem
-            className={`${classes.menuItem} ${
-              item.active ? classes.active : ""
-            }`}
-            button
+          <NavLink
+            className={(navLinkProps: { isActive: boolean }) => {
+              return `${navLinkProps.isActive ? classes.active : ""}  ${
+                classes.link
+              }`;
+            }}
             key={`MenuItem${index}`}
+            to={item.url}
           >
-            <ListItemIcon>
-              <Icon sx={{ color: "white" }}>{item.icon}</Icon>
-            </ListItemIcon>
-            <Typography variant="h3">{item.title}</Typography>
-          </ListItem>
+            <ListItem className={classes.menuItem} button>
+              <ListItemIcon>
+                <Icon sx={{ color: "white" }}>{item.icon}</Icon>
+              </ListItemIcon>
+              <Typography className={classes.menuLink} variant="h3">
+                {item.title}
+              </Typography>
+            </ListItem>
+          </NavLink>
         ))}
       </List>
     </Drawer>

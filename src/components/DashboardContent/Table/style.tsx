@@ -1,5 +1,5 @@
 import { createUseStyles } from "react-jss";
-import theme, { breakPoints } from "../../../../styles/variables";
+import theme, { breakPoints } from "../../../styles/variables";
 
 const useStyles = createUseStyles({
   wrapper: {

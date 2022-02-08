@@ -1,6 +1,6 @@
 import { Query } from "@cubejs-client/core";
 import { Paper } from "@mui/material";
-import { SeriesConfig } from "../../../../types/seriesConfig";
+import { SeriesConfig } from "../../../types/seriesConfig";
 import ChartLogic from "./ChartLogic";
 import useStyles from "./style";
 

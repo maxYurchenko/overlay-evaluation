@@ -2,7 +2,7 @@ import { Paper, Typography } from "@mui/material";
 import Pill from "./Pill/Pill";
 import { format } from "date-fns";
 
-import currencyFormatter from "../../../../helpers/currencyFormatter";
+import currencyFormatter from "../../../helpers/currencyFormatter";
 
 import useStyles from "./style";
 

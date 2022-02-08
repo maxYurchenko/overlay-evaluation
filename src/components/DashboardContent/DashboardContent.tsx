@@ -4,17 +4,14 @@ import Grid from "@mui/material/Grid";
 
 import useStyles from "./style";
 import QuickStat from "./QuickStat/QuickStat";
-import {
-  grossMarginLineQuery,
-  revenueBarQuery
-} from "../../../helpers/queries";
+import { grossMarginLineQuery, revenueBarQuery } from "../../helpers/queries";
 import Chart from "./Chart/Chart";
 import { useMediaQuery } from "@mui/material";
-import { breakPoints } from "../../../styles/variables";
+import { breakPoints } from "../../styles/variables";
 import TableWrapper from "./Table/TableWrapper";
-import generateLineData from "../../../helpers/generateLineData";
+import generateLineData from "../../helpers/generateLineData";
 
-const Dashboard = () => {
+const DashboardContent = () => {
   const classes = useStyles();
   const isTabletOrMobile = useMediaQuery(breakPoints.mediaQueries.lg, {
     noSsr: true
@@ -102,4 +99,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardContent;

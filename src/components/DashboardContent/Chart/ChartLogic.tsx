@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Query } from "@cubejs-client/core";
 import { XYChart } from "@amcharts/amcharts4/charts";
 
-import { getDataFromCube } from "../../../../helpers/getDataFromCube";
-import useHttp from "../../../../hooks/useHttp";
-import createChartFromComponents from "../../../../helpers/createChartFromComponents";
+import { getDataFromCube } from "../../../helpers/getDataFromCube";
+import useHttp from "../../../hooks/useHttp";
+import createChartFromComponents from "../../../helpers/createChartFromComponents";
 import ChartLoader from "./ChartLoader/ChartLoader";
-import { SeriesConfig } from "../../../../types/seriesConfig";
+import { SeriesConfig } from "../../../types/seriesConfig";
 
 interface Props {
   columnQuery: () => Query;

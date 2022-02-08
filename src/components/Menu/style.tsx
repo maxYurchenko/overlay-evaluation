@@ -1,9 +1,10 @@
 import { createUseStyles } from "react-jss";
-import theme, { breakPoints } from "../../../styles/variables";
+import theme, { breakPoints } from "../../styles/variables";
 
 const useStyles = createUseStyles({
   menuWrapper: {
     "& .MuiDrawer-paper": {
+      "& $list": { marginTop: 10 },
       width: 280,
       boxSizing: "border-box",
       background: theme.palette.primary.main,
@@ -20,19 +21,20 @@ const useStyles = createUseStyles({
       }
     },
     "& $menuItem": {
+      "& $menuLink": {
+        color: theme.palette.text.secondary,
+        textDecoration: "none"
+      },
       color: theme.palette.text.secondary,
       whiteSpace: "nowrap",
       fontSize: theme.typography.h3.fontSize,
       padding: "15px 0 15px 40px",
-      margin: "10px 0 10px 0",
-      transition: "0.15s all linear",
-      "&$active": {
-        background: theme.palette.primary.dark,
-        borderLeft: `8px solid ${theme.palette.text.secondary}`,
-        paddingLeft: "32px"
-      }
+      margin: "20px 0 20px 0",
+      transition: "0.15s all linear"
     }
   },
+  link: { textDecoration: "none" },
+  menuLink: {},
   open: {},
   hamburgerMenu: {},
   closeButton: {
@@ -45,7 +47,13 @@ const useStyles = createUseStyles({
     padding: "40px 0 0 40px"
   },
   menuItem: {},
-  active: {},
+  active: {
+    "& $menuItem": {
+      background: theme.palette.primary.dark,
+      borderLeft: `8px solid ${theme.palette.text.secondary}`,
+      paddingLeft: "32px"
+    }
+  },
   closed: {},
   list: {},
   [`@media ${breakPoints.mediaQueries.sm}`]: {
