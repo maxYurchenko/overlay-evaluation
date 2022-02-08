@@ -28,16 +28,20 @@ const AppWrapper = () => {
 
   return (
     <Box className={classes.wrapper}>
-      <AppBar
+      <Menu
         open={open}
-        handleDrawerOpen={handleDrawerOpen}
         isTabletOrMobile={isTabletOrMobile}
         handleDrawerClose={handleDrawerClose}
       />
-      <Menu open={open} />
-      <Box component="main">
-        <div className={classes.header} />
-        <Dashboard />
+      <Box className={`${classes.siteWrapper} ${open ? classes.open : ""}`}>
+        <AppBar
+          open={open}
+          isTabletOrMobile={isTabletOrMobile}
+          handleDrawerOpen={handleDrawerOpen}
+        />
+        <Box component="main">
+          <Dashboard />
+        </Box>
       </Box>
     </Box>
   );

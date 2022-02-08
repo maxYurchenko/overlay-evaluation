@@ -1,12 +1,15 @@
 import "./App.css";
-import { Box } from "@mui/system";
 import AppWrapper from "./components/AppWrapper/AppWrapper";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { defaultTheme } from "./styles/variables";
+
+const theme = createTheme(defaultTheme);
 
 function App() {
   return (
-    <Box>
+    <ThemeProvider theme={theme}>
       <AppWrapper />
-    </Box>
+    </ThemeProvider>
   );
 }
 

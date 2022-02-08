@@ -4,7 +4,6 @@ import useStyles from "./style";
 import currencyFormatter from "../../../../helpers/currencyFormatter";
 import { Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useRef, useState } from "react";
 
 const data = {
   customer: "Customer 1",
@@ -17,18 +16,10 @@ const rows = 3000;
 const TableWrapper = () => {
   const classes = useStyles();
   const dataList = getData();
-  const titleRef = useRef<HTMLElement>(null);
-  const [titleHeight, setTitleHeight] = useState(0);
-
-  useEffect(() => {
-    if (titleRef.current) {
-      setTitleHeight(titleRef.current.offsetHeight);
-    }
-  }, [titleRef, titleHeight]);
 
   return (
     <Paper className={classes.wrapper}>
-      <Typography ref={titleRef} variant="h5" className={classes.tabeTitle}>
+      <Typography variant="h3" className={classes.tabeTitle}>
         Revenue Details
       </Typography>
       <Box className={classes.tableContainer}>

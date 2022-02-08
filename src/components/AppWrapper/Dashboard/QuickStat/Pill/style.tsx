@@ -17,7 +17,8 @@ const useStyles = createUseStyles({
   wrapper: {
     textAlign: "center",
     "& $pill": {
-      "& span": { padding: 0, margin: 0 },
+      height: "auto",
+      "& span": { padding: "1px 0", margin: 0 },
       "& svg": { padding: 0, margin: 0, marginLeft: 0 }
     }
   },

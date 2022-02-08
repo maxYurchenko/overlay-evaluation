@@ -2,19 +2,11 @@ import { createUseStyles } from "react-jss";
 import theme from "../../../styles/variables";
 
 const useStyles = createUseStyles({
-  wrapper: {
-    marginLeft: 280,
-    width: `calc(100% - ${280}px)`,
-    flexGrow: 1,
-    overflow: "auto"
+  dashboardWrapper: {
+    marginTop: 50
   },
   main: {
     padding: "0 60px 20px 60px"
-  },
-  dashBoardTitle: {
-    fontSize: theme.fontSize.title,
-    color: theme.colors.lightGreen,
-    margin: "0 0 40px 0"
   },
   tableWrapper: {
     display: "flex"

@@ -1,7 +1,6 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import createLegend from "./chartComponents/legend";
 import createTitle from "./chartComponents/title";
@@ -14,7 +13,6 @@ import createCursor from "./chartComponents/cursor";
 import createScrollBar from "./chartComponents/scrollbar";
 
 am4core.useTheme(am4themes_material);
-am4core.useTheme(am4themes_animated);
 
 const createChartFromComponents = (
   id: string,

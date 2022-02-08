@@ -1,9 +1,9 @@
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { Icon } from "@mui/material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { Icon, IconButton, Typography } from "@mui/material";
 
 import useStyles from "./style";
 
@@ -14,6 +14,8 @@ const menuItems = [
 
 interface Props {
   open: boolean;
+  isTabletOrMobile: boolean;
+  handleDrawerClose: () => void;
 }
 
 const Menu = (props: Props) => {
@@ -22,11 +24,25 @@ const Menu = (props: Props) => {
   return (
     <Drawer
       variant="permanent"
-      className={`${classes.menuWrapper} ${props.open ? "" : classes.closed}`}
+      anchor="left"
+      open={props.open}
+      className={`${classes.menuWrapper} ${props.open ? classes.open : ""}`}
     >
-      <div className={classes.header}></div>
+      <Typography variant="h2" className={classes.logo}>
+        OverlayAnalytics
+      </Typography>
 
-      <List>
+      {props.isTabletOrMobile && props.open ? (
+        <IconButton
+          color="inherit"
+          onClick={props.handleDrawerClose}
+          className={classes.closeButton}
+        >
+          <ChevronLeftIcon />
+        </IconButton>
+      ) : null}
+
+      <List className={classes.list}>
         {menuItems.map((item, index) => (
           <ListItem
             className={`${classes.menuItem} ${
@@ -35,10 +51,10 @@ const Menu = (props: Props) => {
             button
             key={`MenuItem${index}`}
           >
-            <ListItemIcon className={classes.icon}>
-              <Icon>{item.icon}</Icon>
+            <ListItemIcon>
+              <Icon sx={{ color: "white" }}>{item.icon}</Icon>
             </ListItemIcon>
-            <ListItemText primary={item.title} />
+            <Typography variant="h3">{item.title}</Typography>
           </ListItem>
         ))}
       </List>

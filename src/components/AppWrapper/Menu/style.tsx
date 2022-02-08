@@ -10,40 +10,58 @@ const useStyles = createUseStyles({
       overflow: "hidden",
       color: theme.colors.white,
       border: "none",
-      transition: "cubic-bezier(0.3, 0.46, 0.45, 0.94) .5s",
-      transform: "translateX(0)"
+
+      transform: "translateX(-100%)",
+      transition: "cubic-bezier(0.3, 0.46, 0.45, 0.94) .5s"
     },
-    "&$closed": {
+    "&$open": {
       "& .MuiDrawer-paper": {
-        transform: "translateX(-100%)"
+        transform: "translateX(0)"
+      }
+    },
+    "& $menuItem": {
+      color: theme.colors.white,
+      whiteSpace: "nowrap",
+      fontSize: theme.fontSize.menu,
+      padding: "15px 0 15px 40px",
+      margin: "10px 0 10px 0",
+      transition: "0.15s all linear",
+      "&$active": {
+        background: theme.colors.darkGreen,
+        borderLeft: `8px solid ${theme.colors.white}`,
+        paddingLeft: "32px"
       }
     }
   },
-  header: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    height: 90
+  open: {},
+  hamburgerMenu: {},
+  closeButton: {
+    marginLeft: 40
   },
-  menuItem: {
+  logo: {
     color: theme.colors.white,
-    whiteSpace: "nowrap",
-    fontSize: theme.fontSize.menu,
-    padding: "10px 0 10px 40px",
-    margin: "10px 0 10px 0",
-    transition: "0.15s all linear"
+    fontSize: theme.fontSize.logo,
+    fontWeight: 500,
+    padding: "40px 0 0 40px"
   },
-  active: {
-    background: theme.colors.darkGreen,
-    borderLeft: `8px solid ${theme.colors.white}`,
-    paddingLeft: "32px"
-  },
-  icon: {
-    color: theme.colors.white,
-    minWidth: "24px",
-    marginRight: "20px"
-  },
-  closed: {}
+  menuItem: {},
+  active: {},
+  closed: {},
+  list: {},
+  [`@media ${theme.mediaQueries.sm}`]: {
+    logo: {
+      flex: "1 0 auto"
+    },
+    menuWrapper: {
+      "& .MuiDrawer-paper": {
+        flexWrap: "wrap",
+        alignItems: "baseline",
+        alignContent: "flex-start",
+        flexDirection: "row"
+      }
+    },
+    list: { flex: "1 0 100%" }
+  }
 });
 
 export default useStyles;

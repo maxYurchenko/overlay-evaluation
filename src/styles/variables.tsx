@@ -34,3 +34,59 @@ const theme = {
 };
 
 export default theme;
+
+export const defaultTheme = {
+  palette: {
+    type: "light",
+    primary: {
+      main: "#10AC84",
+      contrastText: "#FFFFFF"
+    },
+    secondary: {
+      main: "#b0b6b8",
+      dark: "#FFFFFF",
+      contrastText: "#FFFFFF"
+    },
+    background: {
+      default: "#f3f3f3"
+    },
+    text: {
+      secondary: "#FFFFFF",
+      disabled: "#FFFFFF",
+      hint: "#FFFFFF",
+      primary: "#636e72"
+    },
+    error: {
+      main: "#E66767"
+    }
+  },
+  typography: {
+    fontSize: 12,
+    h1: {
+      fontSize: 32,
+      fontWeight: 500
+    },
+    h2: {
+      fontSize: 20,
+      fontWeight: 500
+    },
+    h3: {
+      fontSize: 16
+    },
+    h4: {
+      fontSize: 12
+    },
+    subtitle1: {
+      fontWeight: 400,
+      fontSize: 14
+    },
+    subtitle2: {
+      fontWeight: 400,
+      fontSize: 12
+    },
+    body1: {
+      fontWeight: 300,
+      fontSize: 12
+    }
+  }
+};

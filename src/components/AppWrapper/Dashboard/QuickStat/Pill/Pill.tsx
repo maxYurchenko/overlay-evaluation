@@ -21,12 +21,12 @@ const Pill = (props: Props) => {
             <ArrowUpwardIcon className={classes.icon} />
           )
         }
-        className={`${classes.pill} ${
-          props.drop ? classes.drop : classes.raise
-        }`}
+        className={`${classes.pill} `}
+        sx={{ fontSize: 18, color: "white" }}
         label={props.marginPercent}
+        color={props.drop ? "error" : "secondary"}
       />
-      <Typography className={classes.label}>MoM</Typography>
+      <Typography variant="subtitle2">MoM</Typography>
     </div>
   );
 };

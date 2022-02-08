@@ -12,18 +12,20 @@ const useStyles = createUseStyles({
   },
   tabeTitle: {
     fontSize: theme.fontSize.menu,
-    marginLeft: "10px",
-    marginBottom: "25px"
+    paddingLeft: "10px"
   },
   tableContainer: {
-    flex: "1 1 100%"
+    flex: "1 1 100%",
+    padding: "15px 0",
+    boxSizing: "border-box"
   },
   table: {
     fontSize: theme.fontSize.s,
     color: theme.colors.asphalt,
     border: "none",
     "& .ReactVirtualized__Table__headerRow": {
-      textTransform: "inherit"
+      textTransform: "inherit",
+      paddingBottom: 20
     }
   },
   [`@media ${theme.mediaQueries.lg}`]: {

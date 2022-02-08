@@ -1,6 +1,11 @@
 import { createUseStyles } from "react-jss";
 import theme from "../../../styles/variables";
 
+const noPaddingMargin = {
+  margin: 0,
+  padding: 0
+};
+
 const useStyles = createUseStyles({
   list: {
     display: "flex",
@@ -9,37 +14,41 @@ const useStyles = createUseStyles({
     padding: 0,
     marginLeft: "auto"
   },
-  listItem: { margin: "0 0 0 0", padding: 0 },
-  listIcon: {
-    "& span": {
-      cursor: "pointer",
-      color: theme.colors.asphalt,
-      transition: "0.15s all linear",
-      "&:hover": {
-        color: theme.colors.lightGreen
+  listItem: {},
+  listIcon: {},
+  appBar: {
+    "&.MuiPaper-root": {
+      transition: "background 0.5s ease, color 0.5s ease, height 0.5s ease"
+    },
+    "& $toolbar": {
+      "& $hamburgerMenu": { marginRight: "auto" },
+      justifyContent: "flex-end",
+      padding: "40px",
+      minHeight: 0
+    },
+    "& $list": {
+      ...noPaddingMargin,
+      "& $listItem": {
+        ...noPaddingMargin,
+        "& $listIcon": {
+          ...noPaddingMargin,
+          marginLeft: 24,
+          minWidth: 0,
+          "& span": {
+            cursor: "pointer",
+            transition: "0.15s all linear",
+            "&:hover": {
+              color: theme.colors.lightGreen
+            }
+          }
+        }
       }
     }
   },
-  drawer: {
-    transition: "width 0.5s linear",
-    zIndex: 1500,
-    marginLeft: theme.drawer.width,
-    background: "none",
-    boxShadow: "none"
-  },
-  logo: {
-    color: theme.colors.white,
-    fontSize: theme.fontSize.logo,
-    fontWeight: 500,
-    paddingLeft: "16px"
-  },
-  toolbar: {
-    minHeight: "90px"
-  },
-  closeButton: {
-    marginLeft: 40
-  },
+  hamburgerMenu: {},
+  toolbar: {},
   headerScrolled: {
+    "& $toolbar": { padding: "15px 40px" },
     background: theme.colors.lightGreen,
     "& $listIcon ": {
       "& span": {
@@ -53,19 +62,18 @@ const useStyles = createUseStyles({
       color: theme.colors.white
     }
   },
-  hidden: { display: "none" },
-  hamburgerMenu: {},
   [`@media ${theme.mediaQueries.md}`]: {
     listIcon: { minWidth: 0, marginLeft: 30 },
     hamburgerMenu: {
       color: theme.colors.asphalt
+    },
+    appBar: {
+      "& $toolbar": {
+        padding: "20px 40px"
+      }
     }
   },
-  [`@media ${theme.mediaQueries.sm}`]: {
-    toolbar: {
-      minHeight: "60px"
-    }
-  }
+  [`@media ${theme.mediaQueries.sm}`]: {}
 });
 
 export default useStyles;

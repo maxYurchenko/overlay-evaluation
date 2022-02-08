@@ -22,8 +22,10 @@ const Dashboard = () => {
   return (
     <Box className={classes.wrapper}>
       <Box className={classes.main}>
-        <Typography className={classes.dashBoardTitle}>My Dashboard</Typography>
-        <Grid container spacing={3}>
+        <Typography variant="h1" color="primary">
+          My Dashboard
+        </Typography>
+        <Grid sx={{ marginTop: "50px" }} container spacing={3}>
           <Grid item xs={12} sm={6} md={6} lg={3}>
             <QuickStat
               title="Revenue"

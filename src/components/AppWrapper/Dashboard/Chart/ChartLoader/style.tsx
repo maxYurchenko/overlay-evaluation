@@ -45,7 +45,8 @@ const useStyles = createUseStyles({
     justifyContent: "space-between",
     flex: "1 0 100%",
     boxSizing: "border-box",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
+    "& $chartColumn": { transform: "scale(1)" }
   },
   chartColumn: {
     transition: "0.5s height ease",

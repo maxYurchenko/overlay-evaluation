@@ -18,14 +18,19 @@ const QuickStat = (props: Props) => {
   const classes = useStyles();
   return (
     <Paper className={classes.wrapper}>
-      <Typography className={classes.cardTitle}>{props.title}</Typography>
+      <Typography variant="h3" className={classes.cardTitle}>
+        {props.title}
+      </Typography>
       <div>
-        <Typography className={classes.cardHighlight}>
+        <Typography
+          sx={{ fontSize: 34, fontWeight: 500 }}
+          className={classes.cardHighlight}
+        >
           {isNaN(Number(props.highlight))
             ? props.highlight
             : currencyFormatter(Number(props.highlight))}
         </Typography>
-        <Typography className={classes.cardDate}>
+        <Typography variant="subtitle1" className={classes.cardDate}>
           {format(props.date, "MMM yyyy")}
         </Typography>
       </div>

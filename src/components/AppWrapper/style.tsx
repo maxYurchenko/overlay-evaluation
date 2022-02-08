@@ -7,6 +7,17 @@ const useStyles = createUseStyles({
     backgroundColor: theme.colors.background,
     minHeight: "100vh"
   },
+  siteWrapper: {
+    width: "100%",
+    flexGrow: 1,
+    overflow: "auto",
+    marginTop: 70,
+    "&$open": {
+      width: `calc(100% - 280px)`,
+      marginLeft: "280px"
+    }
+  },
+  open: {},
   header: {
     display: "flex",
     alignItems: "center",

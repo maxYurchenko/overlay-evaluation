@@ -48,7 +48,7 @@ const getXAxis = (
     : { timeUnit: "month", count: 1 };
   dateAxis.baseInterval = baseInterval;
 
-  dateAxis.renderer.minGridDistance = 30;
+  dateAxis.renderer.minGridDistance = 33;
 
   if (config?.disableRenderer) dateAxis.renderer.disabled = true;
 
