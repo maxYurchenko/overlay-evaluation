@@ -15,6 +15,7 @@ import TableWrapper from "./Table/TableWrapper";
 import generateLineData from "../../../helpers/generateLineData";
 
 const Dashboard = () => {
+  console.log(123);
   const classes = useStyles();
   const isTabletOrMobile = useMediaQuery(breakPoints.mediaQueries.lg, {
     noSsr: true
